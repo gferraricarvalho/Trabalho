@@ -16,6 +16,11 @@ def ler_arquivo (nome_arquivo):
     -------
     datas : string
         Retorna as datas que estão escritas no arquivo.
+        
+    Exemplo
+    -------
+    >>> ler_arquivo ("texto.txt")
+    '13 de agosto 2023 - 10 de agosto de 2023'
 
     """
     arquivo = open(nome_arquivo).readlines()
@@ -23,4 +28,5 @@ def ler_arquivo (nome_arquivo):
     
     return datas
 
-print(ler_arquivo("texto.txt"))
+if __name__ == '__main__': 
+    doctest.testmod() 

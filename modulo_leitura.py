@@ -5,7 +5,7 @@ import datetime
 
 def ler_arquivo (nome_arquivo):
     """
-    Funçao para ler o arquivo.
+    Funçao para ler um arquivo.
 
     Parameters
     ----------

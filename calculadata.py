@@ -25,11 +25,18 @@ def calcular_data(data_string):
         }
     
     partes = data_string.split()
-    dia = int(partes[0])
-    mes = meses[partes[2]]
-    ano = int(partes[4])
+    dia_1 = int(partes[0])
+    mes_1 = meses[partes[2]]
+    ano_1 = int(partes[4])
 
-    return datetime(ano, mes, dia)
+    dia_2 = int(partes[6])
+    mes_2 = meses[partes[8]]
+    ano_2 = int(partes[10])
+    
+    data_inicial = datetime(ano_1, mes_1, dia_1)
+    data_final = datetime(ano_2, mes_2, dia_2)
+
+    return data_final, data_inicial
 
 def calcular_diferenca(data_inicial, data_final):
     """

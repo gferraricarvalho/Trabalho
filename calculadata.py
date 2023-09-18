@@ -11,3 +11,9 @@ def calcular_data(data_string):
     ano = int(partes[4])
 
     return datetime(ano, mes, dia)
+
+def calcular_diferenca(data_inicial, data_final):
+    diferenca = data_final - data_inicial
+    
+    return f"A diferenca entre as datas é de {diferenca.days} dias"
+

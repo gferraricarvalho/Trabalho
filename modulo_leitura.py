@@ -2,12 +2,12 @@ import doctest
 
 def ler_arquivo (nome_arquivo):
     """
-    Funçao para ler um arquivo.
+    Funçao para ler um arquivo de texto e transformar em uma string.
 
     Parameters
     ----------
     nome_arquivo : string
-        Nome do arquivo com a data. O arquivo deve estar na mesma pasta do módulo.
+        Nome do arquivo ".txt". O arquivo deve estar na mesma pasta do módulo.
 
     Returns
     -------
@@ -21,6 +21,8 @@ def ler_arquivo (nome_arquivo):
 
     """
     arquivo = open(nome_arquivo).readlines()
+    
+    #tranforma o primeiro retorno da função open em uma string
     datas = str(arquivo[0])
     
     return datas

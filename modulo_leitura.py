@@ -1,7 +1,4 @@
-import numpy as np
-import pandas as pd
 import doctest
-import datetime
 
 def ler_arquivo (nome_arquivo):
     """

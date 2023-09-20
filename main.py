@@ -1,6 +1,3 @@
-import numpy as np
-import pandas as pd
-from datetime import datetime 
 import calculadata as cd
 import modulo_leitura as ml
 
@@ -29,9 +26,9 @@ while True:
             if len(partes) != 2:
                 print("Formato inválido no arquivo. Use 'data inicial - data final'.")
                 continue
-            data1 = cd.converter_data(partes[0].strip())
-            data2 = cd.converter_data(partes[1].strip())
-            print(cd.calcular_diferenca(data1, data2))
+            else: 
+                data_inicial, data_final = cd.calcular_data(data_string)
+                print(cd.calcular_diferenca(data_final, data_inicial))
         else:
             print(f"Arquivo '{nome_arquivo}' não encontrado.")
     elif escolha == '3':

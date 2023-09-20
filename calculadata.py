@@ -3,7 +3,7 @@ import doctest
 
 def calcular_data(data_string):
     """
-    Calcula as datas e divide em data inicial e final
+    Transforma as datas adicionadas em data inicial e final no formato datetime.
 
     Parameters
     ----------
@@ -13,17 +13,20 @@ def calcular_data(data_string):
     Returns
     -------
     string
-        Retorna a data no formato "yyyy-mm-dd" e o horário 00:00:00
+        Retorna as datas inicial e final no formato "yyyy-mm-dd" e o horário 00:00:00
         
     Exemplo
-    >>> calcular_data("13 de Outubro de 2002")
-    datetime.datetime(2002, 10, 13, 0, 0)
+    >>> calcular_data("13 de Outubro de 2002 - 10 de Outubro de 2002")
+    (datetime.datetime(2002, 10, 10, 0, 0), datetime.datetime(2002, 10, 13, 0, 0))
 
     """
+    
+    #trnsforma os meses em número
     meses = {"Janeiro": 1, "Fevereiro": 2, "Março": 3, "Abril": 4, "Maio": 5, "Juhno": 6, 
              "Julho": 7, "Agosto": 8, "Setembro": 9, "Outubro": 10, "Novembro": 11, "Dezembro": 12
         }
     
+    #divide as partes em dia, mÊs e ano
     partes = data_string.split()
     dia_1 = int(partes[0])
     mes_1 = meses[partes[2]]
@@ -33,6 +36,7 @@ def calcular_data(data_string):
     mes_2 = meses[partes[8]]
     ano_2 = int(partes[10])
     
+    #transforma para o formato datetime
     data_inicial = datetime(ano_1, mes_1, dia_1)
     data_final = datetime(ano_2, mes_2, dia_2)
 
@@ -40,7 +44,7 @@ def calcular_data(data_string):
 
 def calcular_diferenca(data_inicial, data_final):
     """
-    Calcula a diferença entre as datas
+    Calcula a diferença entre as datas.
 
     Parameters
     ----------
